@@ -15,7 +15,7 @@ Environment:
     PIL: 9.1.0
 ```
 The code can theoretically work on arbitrary PyTorch environments, but we do not recommend too old version of PyTorch to avoid the version conflict of the `wilds` package and some errors when installing `torch-scatter`. The experiment results may have a slight fluctuation when changing the environment. This is because of several factors such as the PyTorch version, the CUDA version or the GPU version, and hardware. For reproducing the results exactly, we recommend using our trained weights [here](https://drive.google.com/file/d/1HYzfc0qDrn4Sm1-xumDj0Oxc_UZ-7E12/view?usp=sharing
-).
+). (This link is not available now. We will provide a new link soon.)
 #### Pre-trained weights preparation
 Download ImageNet pre-trained weights of ResNet-18 from https://download.pytorch.org/models/resnet18-5c106cde.pth, and place it under `pretrained_weights`. The directory structure should be:
 ```
