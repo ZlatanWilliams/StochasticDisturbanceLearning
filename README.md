@@ -86,7 +86,7 @@ NICO
 Note: the data split files of CelebA and NICO are already provided under `datasets`.
 
 ## Implement the experiments
-To simply run the experiments for a certain dataset under a certain algorithm, see `DomainBed/run.py`.  
+To simply run experiments for a certain dataset under a certain algorithm, see `DomainBed/run.py`.  
 Example usage:
 ```python
 # Launch
@@ -100,13 +100,27 @@ If you want to try for a group of hyper-parameters, firstly edit `DomainBed/swee
 ```python
 python tuning.py launch --dataset PACS --algorithm SDL_Gaussian --lr 6e-5 --worst_case_p 0.1
 ```
-For showing the results of running or adjusting, run `DomainBed/collect_run_results.py` or `DomainBed/collect_adjust_results.py` as the following examples:
+To show the results of running or adjusting, run `DomainBed/collect_run_results.py` or `DomainBed/collect_adjust_results.py` as the following examples:
 ```python
 python collect_run_results.py --dataset PACS --algorithm SDL_Gaussian
 python collect_tuning_results.py --dataset PACS --algorithm SDL_Gaussian --lr 6e-5 --worst_case_p 0.1
 ```
 You can check the args in `DomainBed/collect_adjust_results.py` for all the hyper-parameters (the default version is only for SDL algorithms, for others you can write it on your own). The model weights and `results.txt` will be stored in `DomainBed/sweep/${dataset}/outputs/`.
-We also provide a python script to list the hyperparameters searching details by connecting `DomainBed/domainbed/scripts/list_top_hparams.py`, the example usage is as follows:
+We also provide a Python script to list the hyperparameters searching details by connecting `DomainBed/domainbed/scripts/list_top_hparams.py`, the example usage is as follows:
 ```python
 python list.py --dataset PACS --algorithm SDL_Gaussian --test_env 0
+```
+
+## Citation
+We would appreciate any suggestions and comments. If you find our work helpful, please cite our papers. Thanks! 
+```
+@inproceedings{ye2023certifiable,
+  title={Certifiable out-of-distribution generalization},
+  author={Ye, Nanyang and Zhu, Lin and Wang, Jia and Zeng, Zhaoyu and Shao, Jiayao and Peng, Chensheng and Pan, Bikang and Li, Kaican and Zhu, Jun},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={37},
+  number={9},
+  pages={10927--10935},
+  year={2023}
+}
 ```
